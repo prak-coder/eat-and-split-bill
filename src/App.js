@@ -33,26 +33,64 @@ export default function App() {
 function FriendsList() {
   return (
     <div>
-      {initialFriends.map((friend) => (
-        <Friend
-          name={friend.name}
-          image={friend.image}
-          balance={friend.balance}
-          key={friend.id}
-        />
-      ))}
+      <ul>
+        {initialFriends.map((friend) => (
+          <Friend
+            name={friend.name}
+            image={friend.image}
+            balance={friend.balance}
+            key={friend.id}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
 function Friend({ name, image, balance }) {
   return (
+    <>
+      <li>
+        <img src={image} alt={name} />
+        <h3>{name}</h3>
+        <button className="button">Select</button>
+        <p>{balance}</p>
+      </li>
+    </>
+  );
+}
+function AddFriendForm() {
+  return (
     <div>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <button>Select</button>
-      <p>{balance}</p>
+      <form>
+        <label>🤼 Friend Name</label>
+        <input type="text" />
+        <label>🎅Add Image URL</label>
+        <input type="text" />
+        <button className="button">Add</button>
+      </form>
+      <button className="button">Close</button>
     </div>
   );
 }
-function AddFriendForm() {}
-function SplitBillForm() {}
+function SplitBillForm() {
+  return (
+    <div>
+      <form>
+        <h1>SPLIT A BILL WITH SARAH</h1>
+        <br />
+        <label>💰 Bill Value</label>
+        <input type="text" />
+        <label>👧Your Expense</label>
+        <input type="text" />
+        <label>👩‍🦰 Sarah's Expense</label>
+        <input type="text" />
+        <label>Who is paying the bill?</label>
+        <select>
+          <option>You</option>
+          <option>Sarah</option>
+        </select>
+        <button className="button">Split Bill</button>
+      </form>
+    </div>
+  );
+}
