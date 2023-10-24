@@ -62,7 +62,6 @@ body {
   grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
   column-gap: 1.6rem;
-
   padding: 1.2rem;
   border-radius: 7px;
   transition: 0.5s;
@@ -112,7 +111,6 @@ form {
   display: grid;
   align-items: center;
   gap: 1.2rem;
-
   background-color: var(--color-lightest);
   border-radius: 7px;
 }
